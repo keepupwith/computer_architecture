@@ -58,16 +58,14 @@ begin
          --Set values for predefnined reg values, $XZR, $to, etc
          regFile(XZR) <= (others=>'0');
          regFile(x9)  <= x"0000000000000001";
-         regFile(x10) <= x"0000000000000002";
-         regFile(x11) <= x"0000000000000004";
-         regFile(x12) <= x"0000000000000008";
+         regFile(x10) <= x"0000000000000000";
+         regFile(x11) <= x"0000000000000000";
+         regFile(x12) <= x"0000000000000000";
 
-         regFile(x19) <= x"0000000000000001";
-         regFile(x20) <= x"0000000000000002";
-         regFile(x21) <= x"000000008BADF00D";
-         regFile(x22) <= x"000000008BADF00D";
-         regFile(x23) <= x"0000000000000000";
-         regFile(x24) <= x"0000000000000000";
+         regFile(x19) <= x"0000000000000000";
+         regFile(x20) <= x"0000000000000000";
+         regFile(x21) <= x"0000000000000000";
+         regFile(x22) <= x"0000000000000000";
          first := false;
       end if;
       
