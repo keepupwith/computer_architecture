@@ -15,7 +15,6 @@ port(
 
      ForwardA  	: out STD_LOGIC_VECTOR(1 downto 0);
      ForwardB   : out STD_LOGIC_VECTOR(1 downto 0)
-     
 
 
 );
@@ -26,8 +25,6 @@ BEGIN
 
 process(forwarding_exmem_regwrite, forwarding_Rn, forwarding_Rm, forwarding_exmem_Rd, forwarding_memwb_Rd,forwarding_memwb_regwrite)
 begin
- ForwardA <= "00"; 
- ForwardB <= "00";
 
  if ((forwarding_exmem_regwrite='1') and  (forwarding_exmem_Rd /="11111")  and (forwarding_exmem_Rd=forwarding_Rn))then
 
@@ -54,7 +51,6 @@ if(forwarding_sturinstruct="11111000000")then
  if (forwarding_memwb_Rd=forwarding_Rd)then
   ForwardB<="01";
  end if;
-
 end if;
 
 end process;

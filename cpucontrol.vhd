@@ -13,18 +13,16 @@ port(
      ALUSrc   : out STD_LOGIC;
      RegWrite : out STD_LOGIC;
      UBranch     : out STD_LOGIC;
-     
      ALUOp    : out STD_LOGIC_VECTOR(1 downto 0)
 );
 end CPUControl;
 
 
-architecture CPUControl of CPUControl is
+architecture CPUControl_example of CPUControl is
 begin
+	
 	process(Opcode,Control)
 	begin
-	
-
 	if(Control='1') then
 		if (Opcode(10)='1' AND Opcode(7 downto 5)="100" AND Opcode(2 downto 1) ="00") then 
 			
@@ -119,6 +117,7 @@ begin
 		end if;
 	elsif(Control='0') then
         	 ALUSrc <= '0'; MemtoReg <= '0'; RegWrite <= '0'; MemRead <= '0'; MemWrite <= '0'; CBranch <= '0'; UBranch <= '0'; ALUOp <= "00"; 
-	end if;
+
+    end if;
 	end process;
-end CPUControl;
+end CPUControl_example;
